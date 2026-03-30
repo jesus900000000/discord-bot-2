@@ -4,7 +4,7 @@ import { startYapping, stopYapping } from '../utils/yapper.js';
 export default {
   data: new SlashCommandBuilder()
     .setName('ping')
-    .setDescription('Control the yapping')
+    .setDescription('Pings Yapper Bot')
     .addSubcommand(sub =>
       sub
         .setName('start')
@@ -21,12 +21,12 @@ export default {
 
     if (sub === 'start') {
       startYapping(interaction.channel);
-      return await interaction.reply('im alive');
+      return await interaction.reply('Yapper Active!');
     }
 
     if (sub === 'stop') {
       stopYapping();
-      return await interaction.reply('ping closed');
+      return await interaction.reply('Ping Closed.');
     }
   }
 };
